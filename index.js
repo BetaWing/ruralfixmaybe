@@ -7,8 +7,8 @@
 // @match        https://*.grepolis.com/game/*
 // @grant        none
 // @run-at       document-end
-// @updateURL    https://raw.githubusercontent.com/NotXina/MultBot/main/index.js
-// @downloadURL  https://raw.githubusercontent.com/NotXina/MultBot/main/index.js
+// @updateURL    https://raw.githubusercontent.com/BetaWing/ruralfixmaybe/refs/heads/main/index.js
+// @downloadURL  https://raw.githubusercontent.com/BetaWing/ruralfixmaybe/refs/heads/main/index.js
 // ==/UserScript==
 
 (function () {
