@@ -173,8 +173,8 @@ var AutoBuild = class extends MultUtil {
         }
     };
     /* Preset Voador: composição customizada para cidade voadora.
-       Senado=25, Armazém=35, Fazenda=45, Academia=31, Templo=20,
-       Quartel=30, Porto=5, Mercado=15, Esconderijo=10, Recursos=40, Muro=0.
+       Senado=25, Armazém=25, Fazenda=35, Academia=34, Templo=12,
+       Quartel=5, Porto=30, Mercado=15, Esconderijo=10, Recursos=40, Muro=0.
        Aplica SOMENTE na cidade atualmente ativa no jogo. */
     applyFlyerPreset = () => {
         try {
