@@ -182,12 +182,12 @@ var AutoBuild = class extends MultUtil {
             const town_id = town.getId();
             this.towns_buildings[town_id] = this._buildBuildingsPreset({
                 main:    25,
-                storage: 35,
-                farm:    45,
-                academy: 31,
-                temple:  20,
-                barracks:30,
-                docks:   5,
+                storage: 25,
+                farm:    35,
+                academy: 34,
+                temple:  12,
+                barracks:5,
+                docks:   30,
                 market:  15,
                 hide:    10,
                 lumber:  40,
