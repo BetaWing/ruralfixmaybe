@@ -123,40 +123,54 @@ var AutoRuralLevel = class extends MultUtil {
                 let towns = this.generateList();
                 let expansion = false;
                 const levelCosts = [1, 5, 25, 50, 100];
-                for (let level = 1; level < this.rural_level; level++) {
-                    if (available < levelCosts[level - 1]) return;
+                for (let level = 1; level <= 5; level++) {
+    if (available < levelCosts[level - 1]) return;
 
-                    for (let town_id of towns) {
-                        let town = uw.ITowns.towns[town_id];
-                        let x = town.getIslandCoordinateX();
-                        let y = town.getIslandCoordinateY();
+    for (let town_id of towns) {
+        let town = uw.ITowns.towns[town_id];
+        let x = town.getIslandCoordinateX();
+        let y = town.getIslandCoordinateY();
 
-                        for (let farmtown of farm_town_models) {
-                            if (farmtown.attributes.island_x != x) continue;
-                            if (farmtown.attributes.island_y != y) continue;
+        for (let farmtown of farm_town_models) {
+            if (farmtown.attributes.island_x != x) continue;
+            if (farmtown.attributes.island_y != y) continue;
 
-                            for (let relation of player_relation_models) {
-                                if (farmtown.attributes.id != relation.attributes.farm_town_id) {
-                                    continue;
-                                }
-                                if (relation.attributes.expansion_at) {
-                                    expansion = true;
-                                    continue;
-                                }
-                                if (relation.attributes.expansion_stage >= level) continue;
-                                // FIX: mesma correcao - so loga sucesso se
-                                // o servidor de fato confirmou (sem res.error).
-                                const ok = await this.upgradeRural(town_id, relation.attributes.farm_town_id, relation.attributes.id);
-                                if (ok) {
-                                    this.console.log('[AutoRuralLevel] ' + this.t('arl_upgraded_log', { island: farmtown.attributes.island_xy, name: farmtown.attributes.name }));
-                                }
-                                return;
-                            }
-                        }
-                    }
+            for (let relation of player_relation_models) {
+                if (farmtown.attributes.id != relation.attributes.farm_town_id) {
+                    continue;
                 }
 
-                if (expansion) return;
+                if (relation.attributes.expansion_at) {
+                    expansion = true;
+                    continue;
+                }
+
+                // Só tenta subir se a aldeia estiver abaixo do nível pretendido
+                if (relation.attributes.expansion_stage >= level) continue;
+
+                const ok = await this.upgradeRural(
+                    town_id,
+                    relation.attributes.farm_town_id,
+                    relation.attributes.id
+                );
+
+                if (ok) {
+                    this.console.log(
+                        '[AutoRuralLevel] ' +
+                        this.t('arl_upgraded_log', {
+                            island: farmtown.attributes.island_xy,
+                            name: farmtown.attributes.name
+                        })
+                    );
+                }
+
+                return;
+            }
+        }
+    }
+}
+
+if (expansion) return;
             }
 
             /* Auto turn off when the level is reached */
