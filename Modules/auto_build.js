@@ -176,7 +176,7 @@ var AutoBuild = class extends MultUtil {
        Senado=25, Armazém=35, Fazenda=45, Academia=31, Templo=20,
        Quartel=30, Porto=5, Mercado=15, Esconderijo=10, Recursos=40, Muro=0.
        Aplica SOMENTE na cidade atualmente ativa no jogo. */
-    applyFastNCPreset = () => {
+    applyFlyerPreset = () => {
         try {
             const town = uw.ITowns.getCurrentTown();
             const town_id = town.getId();
