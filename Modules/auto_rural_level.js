@@ -123,9 +123,7 @@ var AutoRuralLevel = class extends MultUtil {
                 let towns = this.generateList();
                 let expansion = false;
                 const levelCosts = [1, 5, 25, 50, 100];
-                
-                // ALTERAÇÃO 1: Mudar de this.rural_level para 6
-                for (let level = 1; level < 6; level++) {
+                for (let level = 1; level < this.rural_level; level++) {
                     if (available < levelCosts[level - 1]) return;
 
                     for (let town_id of towns) {
@@ -162,8 +160,7 @@ var AutoRuralLevel = class extends MultUtil {
             }
 
             /* Auto turn off when the level is reached */
-            // ALTERAÇÃO 2: Comentar esta linha para não desativar automaticamente
-            // this.toggle();
+            this.toggle();
         } catch (e) {
             this.console.log('[AutoRuralLevel] ' + this.t('arl_main_error', { msg: e?.message ?? e }));
         }
