@@ -144,7 +144,7 @@ var AutoBuild = class extends MultUtil {
         try {
             const town = uw.ITowns.getCurrentTown();
             const town_id = town.getId();
-            this.towns_buildings[town_id] = this._buildBuildingsPreset({ barracks: 5, wall: 0 });
+            this.towns_buildings[town_id] = this._buildBuildingsPreset({ wall: 0 });
             this.storage.save('buildings', this.towns_buildings);
             if (!this.interval) this.startInterval();
             this.setPolisInSettings(town_id);
