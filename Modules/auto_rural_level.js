@@ -143,7 +143,7 @@ var AutoRuralLevel = class extends MultUtil {
                                     expansion = true;
                                     continue;
                                 }
-                                if (relation.attributes.expansion_stage > level) continue;
+                                if (relation.attributes.expansion_stage >= level) continue;
                                 // FIX: mesma correcao - so loga sucesso se
                                 // o servidor de fato confirmou (sem res.error).
                                 const ok = await this.upgradeRural(town_id, relation.attributes.farm_town_id, relation.attributes.id);
