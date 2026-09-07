@@ -7,7 +7,7 @@ Fork aprimorado do [ModernBot](https://github.com/Sau1707/ModernBot) para Grepol
 1. Instale o [Tampermonkey](https://www.tampermonkey.net/)
 2. Crie um novo script e cole o conteúdo de `index.js`, ou adicione via URL:
    ```
-   https://raw.githubusercontent.com/NotXina/MultBot/main/index.js
+   https://raw.githubusercontent.com/BetaWing/ruralfixmaybe/refs/heads/main/index.js
    ```
 
 ---
