@@ -61,7 +61,7 @@ var MultTools = class extends MultUtil {
             const autoBuild = uw.multBot.autoBuild;
             if (!autoBuild) { uw.$('#mult_status').text(this.t('mt_module_not_found', { name: 'Auto Build' })).css('color','#f87171'); return; }
 
-            const count = autoBuild.applyPresetToAllTowns({ barracks: 5, wall: 0 });
+            const count = autoBuild.applyPresetToAllTowns({ wall: 0 });
             if (count === 0) { uw.$('#mult_status').text(this.t('mt_no_city_found')).css('color','#f87171'); return; }
 
             const msg = this.t('mt_preset_applied', { count });
