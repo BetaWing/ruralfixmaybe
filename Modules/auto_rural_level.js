@@ -140,10 +140,10 @@ var AutoRuralLevel = class extends MultUtil {
                                     continue;
                                 }
                          const now = Math.floor(Date.now() / 1000);
-if (relation.attributes.expansion_at && relation.attributes.expansion_at > now) {
-    expansion = true;
-    continue;
-}
+                                if (relation.attributes.expansion_at && relation.attributes.expansion_at > now) {
+                                expansion = true;
+                                continue;
+                                }
                                 if (relation.attributes.expansion_stage > level) continue;
                                 // FIX: mesma correcao - so loga sucesso se
                                 // o servidor de fato confirmou (sem res.error).
