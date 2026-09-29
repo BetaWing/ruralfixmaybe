@@ -395,7 +395,7 @@ var AutoFarm = class extends MultUtil {
             await this.sleep(1036.20, 135.69);
         }
          
-        uw.$(".icon_right.icon_type_speed.ui-dialog-titlebar-minimize").trigger("click");
+        uw.$(".ui-dialog-titlebar-minimize ui-corner-all").trigger("click");
     };
 
     /* Divide polis_list em lotes de 20 e chama claimMultiple por lote.
