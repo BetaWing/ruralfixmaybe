@@ -19,6 +19,8 @@ var AutoResearch = class extends MultUtil {
         'bireme',
         'colonize_ship',
         'mathematics',
+        'phalanx',
+        'ram',
         'cartography',
         'set_sail',
         'strong_wine',
