@@ -402,7 +402,7 @@ var AutoFarm = class extends MultUtil {
        Evita timeout quando o jogador tem muitas cidades (57 no caso atual).
        Cada lote tem pausa de 2s entre si para nao sobrecarregar o servidor. */
     claimMultipleBatched = async (polis_list, base, boost) => {
-        var BATCH_SIZE = 20;
+        var BATCH_SIZE = 999;
         for (var i = 0; i < polis_list.length; i += BATCH_SIZE) {
             var batch = polis_list.slice(i, i + BATCH_SIZE);
             await this.claimMultiple(batch, base, boost);
