@@ -184,7 +184,7 @@ var MultTools = class extends MultUtil {
             for (const ocean in byOcean) {
                 let seq = 1;
                 for (const town of byOcean[ocean]) {
-                    const name = 'TASDELUZES' + ocean + '*' + String(seq).padStart(2, '0');
+                    const name = 'CASASECOMP' + ocean + '*' + String(seq).padStart(2, '0');
                     seq++;
 
                     try {
