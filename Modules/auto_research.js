@@ -12,7 +12,7 @@
 var AutoResearch = class extends MultUtil {
     DEFAULT_ORDER = [
         'town_guard',
-        'booty_bpv',
+        'booty',
         'architecture',
         'shipwright',
         'building_crane',
